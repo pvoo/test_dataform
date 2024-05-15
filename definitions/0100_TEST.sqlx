@@ -1,0 +1,42 @@
+config {
+    type: "table"
+}
+
+
+WITH CTE1 AS (
+    SELECT
+        MAKE,
+        County,
+        City,
+        State,
+        Postal_Code,
+        MODEL,
+        MODEL_YEAR,
+        COUNT(VIN__1_10_) AS VIN
+    FROM ${ref("ALL_EV_CARS_DATA")}
+     GROUP BY MAKE, County, City, State, Postal_Code, MODEL, MODEL_YEAR
+     HAVING MAKE = ${constants.make}
+)
+
+, CTE2 AS (
+    SELECT
+        MAKE,
+        County,
+        City,
+        State,
+        Postal_Code,
+        MODEL,
+        MODEL_YEAR,
+        COUNT(VIN__1_10_) AS VIN
+    FROM ${ref("ALL_EV_CARS_DATA")}
+     GROUP BY MAKE, County, City, State, Postal_Code, MODEL, MODEL_YEAR
+     HAVING MAKE = ${constants.make}
+)
+
+, FINAL_TABLE AS (
+ SELECT * FROM CTE1
+ UNION ALL
+ SELECT * FROM CTE2
+)
+
+SELECT * FROM FINAL_TABLE
