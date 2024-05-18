@@ -2,7 +2,6 @@ config {
     type: "table"
 }
 
-
 WITH CTE1 AS (
     SELECT
         MAKE,

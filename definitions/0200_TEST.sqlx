@@ -1,0 +1,10 @@
+
+config {
+    type: "table"
+}
+
+
+SELECT
+*
+FROM ${ref("0100_TEST")}
+
