@@ -10,7 +10,7 @@
     npm uninstall -g @dataform/cli
 
     #install
-    npm i -g @dataform/cli@^3.0.0-beta
+    npm i -g @dataform/cli
 
     ```
 
