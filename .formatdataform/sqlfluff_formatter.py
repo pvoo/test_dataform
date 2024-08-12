@@ -1,3 +1,4 @@
+
 import sys
 sqlfluff_config_path = sys.argv[1]
 my_bad_query = sys.argv[2]
@@ -15,5 +16,4 @@ def fix_query(sqlfluff_config_path, my_bad_query):
     return my_good_query
 
 print(fix_query(sqlfluff_config_path, my_bad_query)) # so that GoLang can read stdout
-
-
+        

@@ -1,0 +1,3 @@
+{"time":"2024-08-12T07:58:14.769914+01:00","level":"INFO","msg":"Formatting config passed by user","sqlfluffConfigPath":"","inplace":true}
+{"time":"2024-08-12T07:58:14.771113+01:00","level":"INFO","msg":"Formatting config post input validation","sqlfluffConfigPath":".formatdataform/.sqlfluff","inplace":true,"isDir":true,"isFile":false}
+{"time":"2024-08-12T07:58:14.771678+01:00","level":"INFO","msg":"Num sqlx files found","len(*sqlxFiles)":2}
