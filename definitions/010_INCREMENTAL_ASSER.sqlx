@@ -21,6 +21,12 @@ pre_operations {
   }
 }
 
+pre_operations {
+  SELECT 42 AS A
+  UNION ALL
+  SELECT 78 AS A
+}
+
 
 post_operations {
   ${when(incremental(),
@@ -31,6 +37,12 @@ post_operations {
     1=1`
     )
   }
+}
+
+post_operations {
+  SELECT 10 AS B
+  UNION ALL
+  SELECT 8 AS B
 }
 
 
