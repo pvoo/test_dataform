@@ -1,0 +1,22 @@
+config {
+  type: 'table',
+  schema: 'yyy',
+  description: '',
+  tags: ["test"]
+}
+
+pre_operations {
+  select 1
+}
+
+post_operations {
+  select 4
+  union all
+  select 8
+}
+
+SELECT
+  1   AS APPLE
+  , 2 AS BANANA
+  , 3 AS CAT
+  , 4 AS DOG
