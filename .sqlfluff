@@ -1,0 +1,22 @@
+[sqlfluff]
+templater = placeholder
+dialect = bigquery
+
+
+[sqlfluff:rules:capitalisation.keywords]
+# Keywords must be capitalised
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.identifiers]
+# Unquoted identifiers
+extended_capitalisation_policy=upper
+unquoted_identifiers_policy=all
+
+
+# 1 is used by sqlfluff to replace the regex match with the value of the placeholder
+# if you have multiple placeholders, you can add more lines with the same format
+# e.g. 2 = `gcp_project_id.my_dataset.my_table`
+[sqlfluff:templater:placeholder]
+param_regex = (?s)\$\{\s*self\s*\(\s*\)\s*\}|\$\{\s*ref\s*\(\s*(\"?\w+\"?|\{[^}]+\})\s*\)\s*\}|\$\{\s*ref\s*\(\s*\'\s*\d*\s*([\w]+)\s*\'\s*\)\s*\}|\$\{\s*[^}]*\s*\}
+1 = my_table_or_replacement
+2 = my_table_or_replacement

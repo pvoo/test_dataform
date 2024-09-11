@@ -1,22 +1,9 @@
 config {
-  type: 'table',
-  schema: 'yyy',
-  description: '',
-  tags: ["test"]
+    type: 'view',
+    assertions: {
+        uniqueKey: ['a', 'b']
+    }
 }
 
-pre_operations {
-  select 1
-}
+select 1 as a, 2 as b
 
-post_operations {
-  select 4
-  union all
-  select 8
-}
-
-SELECT
-  1   AS APPLE
-  , 2 AS BANANA
-  , 3 AS CAT
-  , 4 AS DOG
