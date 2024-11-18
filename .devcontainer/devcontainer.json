@@ -17,7 +17,7 @@
 		},
         "codespaces": {
 			"openFiles": [
-				"${localWorkspaceFolder}/test_dataform/definitions/test.sqlx"
+				"/workspaces/test_dataform/definitions/test.sqlx"
 			]
 		}
 	},
