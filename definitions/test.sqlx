@@ -1,0 +1,23 @@
+config {
+  type: "table",
+  assertions: {
+    uniqueKey: ["id"]
+  }
+}
+
+js {
+    const bookName = "Harry Potter";
+    const author = "JK Rowling";
+}
+
+SELECT
+    id as user_id
+    , age
+    , creation_date
+    , "${utils.getBookDescription()}" as bookDescription
+    , ROUND(TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), creation_date, DAY) / 365) AS user_tenure
+    , CURRENT_DATETIME() as some_datetime
+FROM
+    ${ref("dep")}
+    TABLESAMPLE SYSTEM (10 PERCENT)
+LIMIT 100

@@ -1,0 +1,4 @@
+config {
+  type: 'table',
+}
+select 29
