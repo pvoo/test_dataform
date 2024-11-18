@@ -12,12 +12,13 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ashishalex.dataform-lsp-vscode" ,
+				"ashishalex.dataform-lsp-vscode"
 			]
 		},
         "codespaces": {
 			"openFiles": [
-				"${localWorkspaceFolder}/test_dataform/definitions/test.sqlx"
+				"definitions/test.sqlx",
+                "README.md"
 			]
 		}
 	},
