@@ -14,6 +14,11 @@
 			"extensions": [
 				"ashishalex.dataform-lsp-vscode" ,
 			]
+		},
+        "codespaces": {
+			"openFiles": [
+				"${localWorkspaceFolder}/definitions/test.sqlx"
+			]
 		}
 	},
 	"onCreateCommand": "npm install -g @dataform/cli"
