@@ -13,7 +13,6 @@
 		"vscode": {
 			"extensions": [
 				"ashishalex.dataform-lsp-vscode" ,
-                "vscodevim.vim"
 			]
 		}
 	},
