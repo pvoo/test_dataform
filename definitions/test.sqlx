@@ -11,12 +11,8 @@ js {
 }
 
 SELECT
-    q.*,
-    id as user_id
-    , age
-    , creation_date
+    q.*
     , "${utils.getBookDescription(bookName, author)}" as bookDescription
-    , ROUND(TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), creation_date, DAY) / 365) AS user_tenure
     , CURRENT_DATETIME() as some_datetime
 FROM
     ${ref("dep")} as q
