@@ -1,4 +1,6 @@
 config {
   type: 'table',
 }
-select 29
+
+
+select 29 as qty

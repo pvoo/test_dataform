@@ -39,4 +39,21 @@ features to work that donot require your gcloud credentials. You can modify the 
 
 ## FAQ
 
+After downloading gcloud cli what do i need to do ?
 
+
+```
+gcloud init
+```
+
+```
+gcloud auth application-default login
+```
+
+```
+gcloud config set project drawingfire-b72a8 # replace with your gcp project id
+```
+
+> Note
+Reload your window using ctrl + shift + p and selecting reload window for the default project setting to take
+affect

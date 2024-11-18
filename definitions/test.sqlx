@@ -11,6 +11,7 @@ js {
 }
 
 SELECT
+    q.*,
     id as user_id
     , age
     , creation_date
@@ -18,6 +19,6 @@ SELECT
     , ROUND(TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), creation_date, DAY) / 365) AS user_tenure
     , CURRENT_DATETIME() as some_datetime
 FROM
-    ${ref("dep")}
+    ${ref("dep")} as q
     TABLESAMPLE SYSTEM (10 PERCENT)
 LIMIT 100
