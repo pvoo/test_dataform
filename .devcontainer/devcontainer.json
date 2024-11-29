@@ -1,40 +1,37 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ubuntu",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-	"features": {
-		"ghcr.io/devcontainers/features/node:1": {},
-		"ghcr.io/dhoeric/features/google-cloud-cli:1": {},
-		"ghcr.io/devcontainers-extra/features/sqlfluff:1": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ashishalex.dataform-lsp-vscode"
-			]
-		},
-        "codespaces": {
-			"openFiles": [
-                "README.md"
-			]
-		}
-	},
-	"onCreateCommand": "npm install -g @dataform/cli"
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  "name": "Dataform - Ubuntu",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  // Use the 'features' property to install additional software.
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+    "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
+    "ghcr.io/devcontainers-extra/features/sqlfluff:1": {},
+    "ghcr.io/devcontainers/features/python:1": {} 
+  },
+  // Use the 'customizations' property to add VS Code settings and extensions.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ashishalex.dataform-lsp-vscode",
+        "usernamehw.errorlens",
+        "ms-python.flake8",
+        "ms-python.autopep8",
+        "jasonn-porch.gitlab-mr"
+      ]
+    }
+  },
+  // use onCreateCommand to run commands when the container is created.
+  "onCreateCommand": "npm install -g @dataform/cli",
+  // gcloud commands should not be needed if gcloud-cli-persistence working 
+  "postCreateCommand": "pip install -r requirements.txt && gcloud config set project bi-project-392012 && gcloud auth login"
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-	// "postCreateCommand": ""
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
